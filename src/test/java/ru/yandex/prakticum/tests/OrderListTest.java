@@ -8,7 +8,8 @@ import org.junit.Test;
 import ru.yandex.prakticum.Courier;
 
 import static java.net.HttpURLConnection.HTTP_OK;
-import static org.hamcrest.Matchers.notNullValue;
+import static org.hamcrest.Matchers.*;
+import static org.mockito.ArgumentMatchers.isNotNull;
 import static ru.yandex.prakticum.steps.OrderSteps.getOrders;
 
 public class OrderListTest {
@@ -28,6 +29,6 @@ public class OrderListTest {
                 .assertThat()
                 .statusCode(HTTP_OK)
                 .assertThat()
-                .body(notNullValue());
+                .body("orders", notNullValue());
     }
 }

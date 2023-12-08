@@ -64,7 +64,6 @@ public class CreateCourierTest {
                 .assertThat()
                 .body("message", is("Этот логин уже используется. Попробуйте другой."))
                 .log().all();
-        deleteCourier(TEST_LOGIN, TEST_PASSWORD);
     }
 
     @Test
